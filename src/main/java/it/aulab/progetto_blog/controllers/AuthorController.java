@@ -55,18 +55,18 @@ public class AuthorController {
 
     @DeleteMapping("{id}")
     public void deleteAuthor(@PathVariable("id") Long id){
-        // if(authorRepository.existsById(id)){
-        //     Author author = authorRepository.findById(id).get();
-        //     List<Post> authorPosts = author.getPosts();
-        //     for (Post post : authorPosts) {
-        //         post.setAuthor(null);
-        //     }
-        //     authorRepository.deleteById(id);
-        // }else{
-        //     throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Author not found");
-        // }
+        if(authorRepository.existsById(id)){
+            Author author = authorRepository.findById(id).get();
+            List<Post> authorPosts = author.getPosts();
+            for (Post post : authorPosts) {
+                post.setAuthor(null);
+            }
+            authorRepository.deleteById(id);
+        }else{
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Author not found");
+        }
 
-        authorRepository.deleteById(id);
+        //authorRepository.deleteById(id);
         
     }
 
