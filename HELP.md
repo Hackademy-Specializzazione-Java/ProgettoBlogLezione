@@ -76,3 +76,9 @@ DTO -> Data transfer object potrebbe ANCHE differire come informazioni rispetto 
 I dto nascono per
 - Nascondere l'implementazioni all'esterno
 - Creano una interfaccia molto semplice rispetto alla mole di dati che vengono realmente utilizzati, cosi possiamo conseganre al FE un descrizione complessiva dei dati senza che debbano necessariamente conoscere il loro effettivo utilizzo in memoria
+
+
+SpEL -> Spring expression language (Dialect)
+${author.id}
+@{/authors/${ciccia}}
+*{name}
