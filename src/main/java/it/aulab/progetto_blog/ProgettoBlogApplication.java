@@ -5,6 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import it.aulab.progetto_blog.utils.mappings.AuthorToAuthorDtoPropertyMap;
+
 @SpringBootApplication //Carica l'intero spring context
 public class ProgettoBlogApplication {
 
@@ -17,6 +19,7 @@ public class ProgettoBlogApplication {
 	public ModelMapper instanceModelMapper(){
 		ModelMapper mapper = new ModelMapper();
 		//in questa posizione vengono effettuati tutti i mapping extra del dto con DAO differenti
+		mapper.addMappings(new AuthorToAuthorDtoPropertyMap());
 		return mapper;
 	}
 

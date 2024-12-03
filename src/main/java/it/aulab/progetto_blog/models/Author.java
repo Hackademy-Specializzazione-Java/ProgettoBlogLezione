@@ -1,5 +1,6 @@
 package it.aulab.progetto_blog.models;
 
+import java.beans.Transient;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -79,5 +80,8 @@ public class Author {
         this.posts = posts;
     }
 
-
+    @Transient
+    public String getFullname() {
+        return name +" "+surname;
+    }
 }
