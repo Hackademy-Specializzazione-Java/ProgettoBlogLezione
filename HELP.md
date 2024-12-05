@@ -82,3 +82,11 @@ SpEL -> Spring expression language (Dialect)
 ${author.id}
 @{/authors/${ciccia}}
 *{name}
+
+
+
+default-src 'self' ; -> specifica da dove è consentito caricare risorse predefinite come immagini, script, stili ecc ecc
+img-src 'self'; -> permette il caricamento di immagini solo dal proprio dominio
+script-src 'self' cdn.jsdelivr.net 'unsafe-inline'; -> sbloccare le cdn di bootstrap con il collegamento ma con una avvertenza che c'è un scrittura in codice non sicura
+style-src 'self' cdn.jsdelivr.net cdnjs.cloudflare.com ; -> sblocca le cdn di font-awesome
+font-src cdnjs.cloudflare.com -> sblocco anche i font di font-awesome
